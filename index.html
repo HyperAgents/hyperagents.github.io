@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<style type="text/css">
+			body {
+				margin:0;
+				padding:0;
+			}
+			#particle-canvas {
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+			}
+			#panel-wrapper {
+				position: absolute;
+				display: flex;
+				height: 100%;
+				width: 100%;
+				justify-content: center;
+				align-items: center;
+			}
+			#panel {
+				position: relative;
+				text-align: center;
+			}
+			#logo {
+				height: 80px;
+				padding: 8px;
+			}
+			#tagline {
+				text-align: center;
+				margin-top: 0.5em;
+				font-size: 2em;
+			}
+			.button {
+				background-color: #90c74b;
+				color: #fff;
+				border-radius: 5px;
+				padding: 0.5em 1em;
+				font-size: 1.2em;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+			}
+			.button:hover {
+				text-decoration: underline;
+			}
+			body {
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="panel-wrapper">
+				<div id="panel">
+					<img id="logo" src="img/logo-white.png" />
+					<div id="tagline">Weaving a Web for people and artificial agents<br/></div>
+					<div style="margin-top: 1em;">
+						<a href="http://project.hyperagents.org" class="button">Research</a>
+					</div>
+				</div>
+			</div>
+			<div id="particle-canvas"></div>
+		</div>
+
+		<script type="text/javascript" src="js/particle-network.min.js"></script>
+		<script type="text/javascript">
+			var canvasDiv = document.getElementById('particle-canvas');
+			var options = {
+				particleColor: '#fff',
+				background: 'img/stars-bg.jpg',
+				interactive: true,
+				speed: 'fast',
+				density: 'high'
+			};
+			var particleCanvas = new ParticleNetwork(canvasDiv, options);
+		</script>
+	</body>
+</html>
